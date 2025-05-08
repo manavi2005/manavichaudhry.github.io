@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects – Manavi Chaudhry</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Manavi Chaudhry</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-page" style="padding:6rem 0;">
+    <div class="container">
+        
+      <div class="card">
+        <h2>Projects</h2>
+        <div class="timeline">
+        
+
+        <!-- 1. DwellX -->
+        <div class="timeline-item">
+          <h3>DwellX – Smart District Ranking Platform</h3>
+          <time>Feb 2025 – Present</time>
+          <p>Developed a robust, data‑driven district ranking platform by ingesting and normalizing real‑time open datasets—housing transactions, school performance scores, crime incident records, employment statistics, and healthcare accessibility—into a <span class="tech">PostgreSQL</span> warehouse; architected automated ETL pipelines and applied advanced statistical and machine‑learning models to compute composite district scores with daily refreshes for accurate, up‑to‑date recommendations.</p>
+          <div class="spacer"></div>
+          <p>Built a scalable <span class="tech">React</span> & <span class="tech">Node.js</span> <span class="web application">React</span> featuring user‑configurable preference weights, fast <span class="tech">RESTful APIs</span>, and interactive visualizations via <span class="tech">Chart.js</span> and <span class="tech">Tableau</span>; optimized database indexing and server‑side caching to deliver sub‑200 ms responses, empowering users to explore, compare, and export personalized neighborhood insights seamlessly.</p>
+          <a href="https://github.com/manavi2005/DwellX" class="btn-link" target="_blank">View Project</a>
+        </div>
+
+        <!-- 2. Co2ntrol -->
+        <div class="timeline-item">
+            <h3>Co2ntrol – Automated Carbon Footprint Tracker</h3>
+            <time>Feb 2025 – Present</time>
+            <p>Engineered a sustainability <span class="tech">full stack web application</span> that automates carbon‑footprint estimation by orchestrating a modular <span class="tech">OCR-based</span> pipeline with <span class="tech">Tesseract.js</span> and <span class="tech">Eden-AI</span>—implementing image pre-processing persisting both raw and computed results for auditability and personalized user feedback.</p>
+            <div class="spacer"></div>
+            <p>Built an intuitive, responsive frontend with <span class="tech">React</span> & <span class="tech">Tailwind CSS</span> and a scalable backend powered by <span class="tech">Node.js</span>, <span class="tech">Supabase</span> & <span class="tech">PostgreSQL</span>—crafted an interactive dashboard leveraging Supabase Realtime streams to display historical emissions trends, personalized carbon‑reduction goals, and AI‑driven sustainability insights; enforced secure authentication and file storage via Supabase Auth & Storage policies, and implemented dynamic email/push alerts plus predictive analytics to guide user behavior and track progress against targets.</p>
+            <a href="https://github.com/yourusername/Co2ntrol" class="btn-link" target="_blank">Project-Link Coming Soon!</a>
+          </div>
+
+        <!-- 3. IMC Bot -->
+        <div class="timeline-item">
+          <h3>IMC-Prosperity-Trading-Bot</h3>
+          <time>Apr 2025</time>
+          <p>Engineered a modular <span class="tech">Python</span> trading framework for IMC’s one‑month challenge—designed multi‑leg market‑making and options‑arbitrage pipelines that ingest real‑time tick data, use<span class="tech">NumPy</span> for high‑performance vectorized pricing and Greeks computation, serialize strategy state with jsonpickle for reproducible backtests, and enforce dynamic risk limits and PnL tracking to execute thousands of orders per second with sub‑millisecond decision latency.</p>
+          <a href="https://github.com/manavi2005/IMC-Prosperity-Trading-bot" class="btn-link" target="_blank">View Project</a>
+        </div>
+
+        <!-- 4. MUSIQA -->
+        <div class="timeline-item">
+          <h3>MUSIQA – Music Recommendation System</h3>
+          <time>Sep 2024 – Mar 2025</time>
+            <p>Leveraged the <span class="tech">Spotify API</span>, <span class="tech">NumPy</span>, <span class="tech">Pandas</span> &amp; <span class="tech">scikit-learn</span> to deconstruct songs into 15 distinct vector components—capturing audio features like tempo, key &amp; energy—to deliver tailored, data‑driven song suggestions.</p>
+            <div class="spacer"></div>
+            <p>Built an interactive platform with <span class="tech">React</span> &amp; <span class="tech">Node.js</span>, deployed on <span class="tech">Vercel</span> to ensure high performance, scalability &amp; smooth user interaction, featuring responsive layouts and dynamic playlist controls.</p>
+            <div class="spacer"></div>
+            <p>Implemented <span class="tech">Spotify OAuth</span> &amp; real‑time data synchronization, enabling users to log in, save preferences &amp; curate playlists—significantly enhancing recommendation accuracy and engagement with persistent, cross‑device profiles.</p>
+          <a href="https://music-recommendation-eight.vercel.app/" class="btn-link" target="_blank">View Project</a>
+        </div>
+
+        <!-- 5. Reseach -->
+        <div class="timeline-item">
+            <h3>Cardinal Build &amp; Deployment Automation</h3>
+            <time>Jan 2025 - present</time>
+            <p>Under my research professor, optimized <span class="tech">CMake</span> recipes to eliminate manual compilation steps and drastically improve build efficiency; authored multi‑stage <span class="tech">Docker</span> images for Cardinal to guarantee consistent, portable deployments across development, testing, and production environments.</p>
+            <p>Implemented JavaScript‑driven auto‑download hyperlinks for unified web access to builds and documentation; conducted in‑depth research on crafting <span class="tech">Conda</span> packages for Cardinal—streamlining package management, versioning, and cross‑platform distribution while preserving environment isolation.</p>
+        </div>
+      
+        <!-- 6. Inventory System -->
+        <div class="timeline-item">
+          <h3>Inventory Management System</h3>
+          <time>Jul 2024 – Oct 2024</time>
+            <p>Built an AI‑powered platform with <span class="tech">Next.js</span>, <span class="tech">Firebase</span> &amp; <span class="tech">Material UI</span> to automate pantry tracking and reduce manual effort by 45 %.</p>
+            <p>Integrated real‑time inventory analytics dashboards and low‑stock alerting using <span class="tech">Firebase Cloud Functions</span> and custom <span class="tech">Material UI</span> components, boosting restocking efficiency and minimizing waste.</p>
+            <a href="https://github.com/manavi2005/Pantry-Tracker" class="btn-link" target="_blank">View Project</a>
+        </div>
+
+        <!-- 7. Customer-Support-AI -->
+        <div class="timeline-item">
+          <h3>Customer-Support-AI Chatbot</h3>
+          <time>Jul 2024 – Oct 2024</time>
+            <p>Developed a support chatbot using <span class="tech">OpenAI API</span> &amp; <span class="tech">React</span> for seamless user query management and automated responses.</p>
+            <p>Designed dynamic conversation flows with contextual intent recognition and fallback handlers, logging dialogues for continuous model retraining and steadily improving response accuracy.</p>
+          <a href="https://github.com/manavi2005/Customer-Support-AI" class="btn-link" target="_blank">View Project</a>
+        </div>
+
+        <!-- 8. Flashcard SaaS -->
+        <div class="timeline-item">
+          <h3>Flashcard SaaS Application</h3>
+          <time>Jul 2024 – Oct 2024</time>
+            <p>Automated flashcard generation using <span class="tech">OpenAI</span>, <span class="tech">Stripe</span>, <span class="tech">Clerk</span> &amp; <span class="tech">Next.js</span> to create personalized study modules.</p>
+            <p>Implemented secure subscription billing and user authentication with <span class="tech">Stripe</span> &amp; <span class="tech">Clerk</span>, and optimized generation latency for near‑instant card delivery, enhancing learning continuity.</p>
+          <a href="https://github.com/manavi2005/ItemListGenerator" class="btn-link" target="_blank">View Project</a>
+        </div>
+
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

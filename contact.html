@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me – Manavi Chaudhry</title>
+  <link rel="stylesheet" href="assets/css/main.css"/>
+</head>
+<body>
+  <!-- Navbar (same as your other pages) -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Manavi Chaudhry</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-page" style="padding-top:6rem; padding-bottom:6rem;">
+    <div class="container contact-grid">
+      <!-- Left: Your contact info -->
+      <div class="card contact-info">
+        <h3>Get in Touch</h3>
+        <p class="lead">Feel free to drop a message!</p>
+        <div class="contact-item">
+          <img src="assets/images/github.svg" alt="GitHub" class="icon">
+          <a href="https://github.com/manavi2005" target="_blank">Click to access my GITHUB.</a>
+        </div>
+        <div class="contact-item">
+          <img src="assets/images/linkedin2.svg" alt="LinkedIn" class="icon">
+          <a href="https://www.linkedin.com/in/manavi-c/" target="_blank">Click to view my LinkedIn Profile!</a>
+        </div>
+        <div class="contact-item">
+            <img src="assets/images/email.svg" alt="Email icon" class="icon">
+            <a href="mailto:manavic2@illinois.edu">manavic2@illinois.edu</a>
+          </div>
+        <div class="contact-item">
+          <span class="icon">📍</span>
+          Champaign, Illinois, USA
+        </div>
+      </div>
+
+      <!-- Right: The Form -->
+      <div class="card contact-form">
+        <h3>Send a Message</h3>
+        <form action="https://formspree.io/f/mbloolkk" method="POST">
+          <input type="hidden" name="_replyto" />
+          <input type="hidden" name="_next" value="thank-you.html" />
+
+          <label>
+            <span>Your Name</span>
+            <input type="text" name="name" placeholder="Your Name" required>
+          </label>
+
+          <label>
+            <span>Your Email</span>
+            <input type="email" name="email" placeholder="Your Email" required>
+          </label>
+
+          <label>
+            <span>Subject (optional)</span>
+            <input type="text" name="subject" placeholder="Subject">
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+          </label>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
