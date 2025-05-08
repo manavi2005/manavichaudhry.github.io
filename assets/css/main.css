@@ -1,342 +1,279 @@
 :root {
-    --bg-color: #000;
-    --accent-color: #ffeb3b;
-    --text-color: #e0e0e0;
-    --shade-color: #C59D00;
-  }
-  
-  /* Reset & Base */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  
-  /* Background Overlay */
-  body::before {
-    content: '';
-    position: fixed; top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('../images/backgroundimagecoding.png') center/cover no-repeat fixed;
-    opacity: 0.35; z-index: -1;
-  }
-  
-  /* Container */
-  .container { width: 90%; max-width: 1200px; margin: 0 auto; }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-    background: none; /* remove any full‑width background */
-  }
-  
-  /* 2. Make the inner container shrink‑wrap and include the logo */
+  --bg-color: #000;
+  --accent-color: #ffeb3b;
+  --text-color: #e0e0e0;
+  --shade-color: #C59D00;
+}
+
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background Overlay */
+body::before {
+  content: '';
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('../images/backgroundimagecoding.png') center/cover no-repeat fixed;
+  opacity: 0.35; z-index: -1;
+}
+
+/* Container */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  background: none;
+}
+.navbar .container {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  width: auto;
+  background: rgba(0,0,0,0.7);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+}
+.navbar .logo { margin-right: 1rem; }
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.navbar .nav-links li a {
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.navbar .nav-links li a:hover,
+.navbar .nav-links li a.active {
+  background-color: var(--shade-color);
+  color: var(--bg-color);
+  border-radius: 1rem;
+}
+.navbar .nav-links li a:hover::after,
+.navbar .nav-links li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0.2em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 0.15em;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Hero */
+.hero {
+  height: 100vh; display: flex; align-items: center;
+  justify-content: center; text-align: center;
+  padding-top: 4rem;
+}
+.hero h2 { font-size: 2.5rem; }
+.hero h2 span { color: var(--accent-color); }
+.hero p { margin-top: 0.5rem; font-size: 1.2rem; }
+
+/* Icon Buttons */
+.social-links { display: flex; gap: 1rem; justify-content: center; margin: 1rem 0; }
+.social-icon {
+  display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px;
+  background-color: rgb(0,0,0);
+  border-radius: 50%; text-decoration: none;
+  transition: background 0.3s;
+}
+.social-icon img { width: 70%; height: 70%; }
+.social-icon.github-icon img { width: 24px; height: 24px; filter: none; }
+.social-icon.linkedin-icon img { filter: invert(100%); }
+.social-icon:hover { background-color: var(--accent-color); }
+
+/* Button */
+.btn {
+  display: inline-block; margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color); text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+.btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
+
+/* === Contact Grid & Cards === */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.card {
+  background: rgba(0,0,0,0.6);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.card h3 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  position: relative;
+}
+.card h3::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -0.25em;
+  width: 2rem; height: 0.2em;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Contact Info */
+.contact-info .lead { margin-bottom: 1.5rem; }
+.contact-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1rem; color: var(--text-color); font-size: 0.95rem;
+}
+.contact-item .icon { width: 24px; height: 24px; filter: invert(100%); }
+.contact-form label {
+  display: block; margin-bottom: 1rem;
+  color: var(--text-color); font-size: 0.9rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%; padding: 0.75rem;
+  border: 1px solid var(--dark-gray);
+  border-radius: 4px; background: var(--bg-color);
+  color: var(--text-color); font-size: 1rem;
+}
+.contact-form .btn { margin-top: 1rem; width: 100%; text-align: center; }
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+/* Resume embed */
+.resume-container {
+  overflow: auto; /* allow scrolling */
+}
+.resume-container object {
+  width: 100%;
+  min-height: 80vh;
+}
+
+/* PDF download button */
+.pdf-btn {
+  width: auto;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #FF77FF; color: #FFF; border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(255,119,255,0.4);
+  text-decoration: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.pdf-btn svg { width: 20px; height: 20px; }
+.pdf-btn:hover {
+  background: #e166e1;
+  box-shadow: 0 6px 12px rgba(255,119,255,0.6);
+}
+
+/* About card */
+.about-card {
+  background: rgba(227,206,129,0.8);
+  padding: 2rem; border-radius: 0.75rem;
+  margin: 0 auto; max-width: 800px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative; margin: 2rem 0; padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute; left: 1rem; top: 0;
+  width: 4px; height: 100%;
+  background: var(--accent-color);
+}
+.timeline-item {
+  position: relative; margin-bottom: 2.5rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute; left: -0.4rem; top: 0.3rem;
+  width: 0.8rem; height: 0.8rem;
+  border-radius: 50%;
+  background: var(--accent-color);
+}
+.timeline-item h3 {
+  margin-bottom: 0.25rem;
+  color: var(--accent-color);
+}
+.timeline-item time {
+  font-size: 0.9rem; color: #bbb;
+  display: block; margin-bottom: 0.5rem;
+}
+.btn-link {
+  display: inline-block; margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--accent-color);
+  color: var(--bg-color);
+  font-size: 0.9rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn-link:hover { background: var(--shade-color); }
+
+/* Projects page tweak */
+.projects-page .timeline-item::before {
+  content: none;
+}
+
+/* Disabled button */
+.btn-disabled {
+  opacity: 0.5; cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ———————————————————————————————————————————— */
+/* MOBILE ADJUSTMENTS */
+/* under 600px, stack navbar & make links scrollable */
+
+@media (max-width: 600px) {
+
+  /* stack logo + links vertically */
   .navbar .container {
-    display: inline-flex;
+    display: flex !important;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    width: auto;                      /* don’t stretch to 90% */
-    background: rgba(0,0,0,0.7);      /* dark translucent band */
-    padding: 0.5rem 1.5rem;           /* vertical + horizontal padding */
-    border-radius: 2rem;              /* pill shape */
+    gap: 1rem;
   }
-  
-  /* 3. Give your logo a bit of breathing room */
-  .navbar .logo {
-    margin-right: 1rem;
-    /* color/font‑size already set */
-  }
-  
-  /* 4. Keep your existing link styling (hover pills + streaks) */
+
+  /* allow horizontal scroll if too many links */
   .navbar .nav-links {
-    list-style: none;
     display: flex;
-    gap: 1.5rem;
-  }
-  .navbar .nav-links li a {
-    color: var(--text-color);
-    text-decoration: none;
-    position: relative;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    transition: 
-      background-color 0.3s,
-      color 0.3s;
-  }
-  
-  /* Pill highlight on hover or when you add an “active” class */
-  .navbar .nav-links li a:hover,
-  .navbar .nav-links li a.active {
-    background-color: var(--shade-color);
-    color: var(--bg-color);
-    border-radius: 1rem;
-  }
-  
-  /* Thin accent streak under the word (only on hover/active) */
-  .navbar .nav-links li a:hover::after,
-  .navbar .nav-links li a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0.2em;            /* tight under the text */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;               /* covers most of the link text */
-    height: 0.15em;           /* thin line */
-    background-color: var(--accent-color);
-    border-radius: 2px;
-    opacity: 0.9;
-  }
-  
-  /* Hero */
-  .hero {
-    height: 100vh; display: flex; align-items: center;
-    justify-content: center; text-align: center;
-    padding-top: 4rem;
-  }
-  .hero h2 { font-size: 2.5rem; }
-  .hero h2 span { color: var(--accent-color); }
-  .hero p { margin-top: 0.5rem; font-size: 1.2rem; }
-  
-  /* Icon Buttons */
-  .social-links { display: flex; gap: 1rem; justify-content: center; margin: 1rem 0; }
-  .social-icon {
-    display: flex; align-items: center; justify-content: center;
-    width: 48px; height: 48px;
-    background-color: rgb(0, 0, 0);
-    border-radius: 50%; text-decoration: none;
-    transition: background 0.3s;
-  }
-  .social-icon img { width: 70%; height: 70%; }
-  .social-icon.github-icon img { width: 24px;
-    height: 24px;
-    filter: none;}
-  .social-icon.linkedin-icon img { filter: invert(100%); }
-  .social-icon:hover { background-color: var(--accent-color); }
-  
-  /* Button */
-  .btn {
-    display: inline-block; margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color); text-decoration: none;
-    transition: background 0.3s, color 0.3s;
-  }
-  .btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
-  /* === Contact Page Grid === */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-  
-  /* === Card Base === */
-  .card {
-    background: rgba(0,0,0,0.6);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-  }
-  
-  /* === Headings inside cards === */
-  .card h3 {
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-    position: relative;
-  }
-  .card h3::after {
-    content: '';
-    position: absolute;
-    left: 0; bottom: -0.25em;
-    width: 2rem; height: 0.2em;
-    background: var(--accent-color);
-    border-radius: 2px;
-  }
-  
-  /*Contact Info Styling*/
-  .contact-info .lead {
-    margin-bottom: 1.5rem;
-  }
-  .contact-item {
-    display: flex;
-    align-items: center;
     gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    font-size: 0.95rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
   }
-  .contact-item .icon {
-    width: 24px;
-    height: 24px;
-    filter: invert(100%);
+  .navbar .nav-links li {
+    flex: 0 0 auto;
   }
-  
-  /*Form Styling*/
-  .contact-form label {
-    display: block;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    font-size: 0.9rem;
+
+  /* shrink hero text a bit on small */
+  .hero h2 {
+    font-size: 2rem;
   }
-  .contact-form label span {
-    display: block;
-    margin-bottom: 0.25rem;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid var(--dark-gray);
-    border-radius: 4px;
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-size: 1rem;
-  }
-  .contact-form .btn {
-    margin-top: 1rem;
-    width: 100%;
-    text-align: center;
-  }
-  
-  @media (max-width: 768px) {
-    .contact-grid { grid-template-columns: 1fr; }
-  }
-  .contact-info .contact-item a {
-    color: var(--text-color) !important;    /* white/light‑gray text */
-    text-decoration: none;                  /* no default blue underline */
-  }
-  
-  /* On hover, you can optionally add an accent */
-  .contact-info .contact-item a:hover {
-    color: var(--accent-color);
-  }
-  
-  /* Invert all icons in the contact‐info panel so they’re visible on dark bg */
-  .contact-info .contact-item .icon {
-    filter: invert(100%) !important;
-  }
-  
-  .resume-container {
-    /* allow the PDF to extend and page to scroll naturally */
-    overflow: visible;
-  }
-  .resume-container object {
-    width: 100%;
-    min-height: 80vh; /* fill most of the viewport */
-  }
-  
-  /* Download button fits text */
-  .pdf-btn {
-    width: auto;
-    padding: 0.75rem 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #FF77FF;
-    color: #FFF;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(255,119,255,0.4);
-    text-decoration: none;
-    transition: background 0.3s, box-shadow 0.3s;
-  }
-  .pdf-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-  .pdf-btn:hover {
-    background: #e166e1;
-    box-shadow: 0 6px 12px rgba(255,119,255,0.6);
-  }
-  
-  .about-page .about-card {
-    background: rgba(227, 206, 129, 0.8);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .timeline {
-    position: relative;
-    margin: 2rem 0;
-    padding-left: 2rem;
-  }
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 1rem;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: var(--accent-color);
-  }
-  .timeline-item {
-    position: relative;
-    margin-bottom: 2.5rem;
-  }
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -0.4rem;
-    top: 0.3rem;
-    width: 0.8rem;
-    height: 0.8rem;
-    border-radius: 50%;
-    background: var(--accent-color);
-  }
-  .timeline-item h3 {
-    margin-bottom: 0.25rem;
-    color: var(--accent-color);
-  }
-  .timeline-item time {
-    font-size: 0.9rem;
-    color: #bbb;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .btn-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.4rem 0.8rem;
-    background: var(--accent-color);
-    color: var(--bg-color);
-    font-size: 0.9rem;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-  .btn-link:hover {
-    background: var(--shade-color);
-  }
-  /* Highlight tech terms */
-  .tech {
-    color: var(--accent-color);
-    background: rgba(255, 235, 59, 0.2);
-    padding: 2px 4px;
-    border-radius: 3px;
-  }
-  
-  .projects-page .timeline-item::before {
-    content: none;
-  }
-  
-  .btn-disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
+}
